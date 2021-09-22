@@ -58,7 +58,6 @@ contract('gNFT', (accounts) => {
 
             //await contract.claim(818); 
             const result = await contract.getSubTokens(818);
-            const house = await contract.name(818);
             assert.equal(result[0], 101);
             assert.equal(house, 'HOUSE');
         })
