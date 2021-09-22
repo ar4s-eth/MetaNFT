@@ -1,0 +1,1322 @@
+{
+  "contractName": "IERC3664Updatable",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "symbol",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "uri",
+          "type": "string"
+        }
+      ],
+      "name": "NewAttribute",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256[]",
+          "name": "attrIds",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "string[]",
+          "name": "names",
+          "type": "string[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "string[]",
+          "name": "symbols",
+          "type": "string[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "string[]",
+          "name": "uris",
+          "type": "string[]"
+        }
+      ],
+      "name": "NewAttributeBatch",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "from",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "to",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256[]",
+          "name": "attrIds",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256[]",
+          "name": "values",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "TransferBatch",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "from",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "to",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "TransferSingle",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "text",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bool",
+          "name": "isPrimary",
+          "type": "bool"
+        }
+      ],
+      "name": "attach",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        }
+      ],
+      "name": "attrURI",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "attributesOf",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "attrIds",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "balanceOfBatch",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "attrIds",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "amounts",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "bytes[]",
+          "name": "texts",
+          "type": "bytes[]"
+        }
+      ],
+      "name": "batchAttach",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        }
+      ],
+      "name": "name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "primaryAttributeOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "interfaceId",
+          "type": "bytes4"
+        }
+      ],
+      "name": "supportsInterface",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        }
+      ],
+      "name": "symbol",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        }
+      ],
+      "name": "textOf",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        }
+      ],
+      "name": "remove",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "increase",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "decrease",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"symbol\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"uri\",\"type\":\"string\"}],\"name\":\"NewAttribute\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256[]\",\"name\":\"attrIds\",\"type\":\"uint256[]\"},{\"indexed\":false,\"internalType\":\"string[]\",\"name\":\"names\",\"type\":\"string[]\"},{\"indexed\":false,\"internalType\":\"string[]\",\"name\":\"symbols\",\"type\":\"string[]\"},{\"indexed\":false,\"internalType\":\"string[]\",\"name\":\"uris\",\"type\":\"string[]\"}],\"name\":\"NewAttributeBatch\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"from\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"to\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256[]\",\"name\":\"attrIds\",\"type\":\"uint256[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"values\",\"type\":\"uint256[]\"}],\"name\":\"TransferBatch\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"from\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"to\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"text\",\"type\":\"bytes\"},{\"internalType\":\"bool\",\"name\":\"isPrimary\",\"type\":\"bool\"}],\"name\":\"attach\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"}],\"name\":\"attrURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"attributesOf\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256[]\",\"name\":\"attrIds\",\"type\":\"uint256[]\"}],\"name\":\"balanceOfBatch\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256[]\",\"name\":\"attrIds\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"amounts\",\"type\":\"uint256[]\"},{\"internalType\":\"bytes[]\",\"name\":\"texts\",\"type\":\"bytes[]\"}],\"name\":\"batchAttach\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"decrease\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"increase\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"}],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"primaryAttributeOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"}],\"name\":\"remove\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"}],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"}],\"name\":\"textOf\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Interface for the updatable functions from the ERC3664.\",\"kind\":\"dev\",\"methods\":{\"attach(uint256,uint256,uint256,bytes,bool)\":{\"details\":\"Attaches `amount` value of attribute type `attrId` to `tokenId`.\"},\"attrURI(uint256)\":{\"details\":\"Returns the Uniform Resource Identifier (URI) for `attrId` attribute.\"},\"attributesOf(uint256)\":{\"details\":\"Returns all attribute types of owned by `tokenId`.\"},\"balanceOf(uint256,uint256)\":{\"details\":\"Returns the attribute type `attrId` value owned by `tokenId`.\"},\"balanceOfBatch(uint256,uint256[])\":{\"details\":\"Returns the batch of attribute type `attrIds` values owned by `tokenId`.\"},\"batchAttach(uint256,uint256[],uint256[],bytes[])\":{\"details\":\"[Batched] version of {attach}.\"},\"decrease(uint256,uint256,uint256)\":{\"details\":\"Decreases `amount` value of attribute type `attrId` from `tokenId`.\"},\"increase(uint256,uint256,uint256)\":{\"details\":\"Increases `amount` value of attribute type `attrId` to `tokenId`.\"},\"name(uint256)\":{\"details\":\"Returns the name of the attribute.\"},\"primaryAttributeOf(uint256)\":{\"details\":\"Returns primary attribute type of owned by `tokenId`.\"},\"remove(uint256,uint256)\":{\"details\":\"Remove attribute type `attrId` from `tokenId`.\"},\"supportsInterface(bytes4)\":{\"details\":\"Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section] to learn more about how these ids are created. This function call must use less than 30 000 gas.\"},\"symbol(uint256)\":{\"details\":\"Returns the symbol of the attribute.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/ERC3664/extensions/IERC3664Updatable.sol\":\"IERC3664Updatable\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"openzeppelin-solidity/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0xa28007762d9da9db878dd421960c8cb9a10471f47ab5c1b3309bfe48e9e79ff4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://796ab6e88af7bf0e78def0f059310c903af6a312b565344e0ff524a0f26e81c6\",\"dweb:/ipfs/QmcsVgLgzWdor3UnAztUkXKNGcysm1MPneWksF72AvnwBx\"]},\"project:/contracts/ERC3664/IERC3664.sol\":{\"keccak256\":\"0xe45bfea37732f89faf005a7b4fa740df2acadf238eb4896d6c09d08837dff757\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c79ecfeb7d7d9b5d4f33613517f87a8ad7040d11f46d760cb0ac61560c0da8ac\",\"dweb:/ipfs/QmeRkXq4SyspbbfVCL3kXow3cT1gecXMecSPVeMf8oicTb\"]},\"project:/contracts/ERC3664/extensions/IERC3664Metadata.sol\":{\"keccak256\":\"0xd3b18da2189879434dae22bd3e8f25633a030eff5ceb1935cc55969f2eebb879\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://678436af52d75a1bf7980ab480d6cf946413626e7c81581334a1f907d39ce966\",\"dweb:/ipfs/QmPCKfFym4FybptF5cuKwtf4LcfFivszMUkc5de6yzyQva\"]},\"project:/contracts/ERC3664/extensions/IERC3664Updatable.sol\":{\"keccak256\":\"0x5d65971f98f90f528160fec04a38c7e81eda42ab085a589350c6ac963ddb024d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://8e4fe9edea36cb64fd7ed19ce01f5aa84bba0f5f363bd1547d9cb641dc7a2af1\",\"dweb:/ipfs/Qmby5xMQxTmWmfaJe1wgX6wyUMaAU69peFDTbb7W6buMFR\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.0;\r\n\r\nimport \"./IERC3664Metadata.sol\";\r\n\r\n/**\r\n * @dev Interface for the updatable functions from the ERC3664.\r\n */\r\ninterface IERC3664Updatable is IERC3664Metadata {\r\n    /**\r\n     * @dev Remove attribute type `attrId` from `tokenId`.\r\n     */\r\n    function remove(uint256 tokenId, uint256 attrId) external;\r\n\r\n    /**\r\n     * @dev Increases `amount` value of attribute type `attrId` to `tokenId`.\r\n     */\r\n    function increase(\r\n        uint256 tokenId,\r\n        uint256 attrId,\r\n        uint256 amount\r\n    ) external;\r\n\r\n    /**\r\n     * @dev Decreases `amount` value of attribute type `attrId` from `tokenId`.\r\n     */\r\n    function decrease(\r\n        uint256 tokenId,\r\n        uint256 attrId,\r\n        uint256 amount\r\n    ) external;\r\n}\r\n",
+  "sourcePath": "D:\\MetaNFT\\MetaNFT\\contracts\\ERC3664\\extensions\\IERC3664Updatable.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/ERC3664/extensions/IERC3664Updatable.sol",
+    "exportedSymbols": {
+      "IERC165": [
+        5144
+      ],
+      "IERC3664": [
+        7904
+      ],
+      "IERC3664Metadata": [
+        10102
+      ],
+      "IERC3664Updatable": [
+        10187
+      ]
+    },
+    "id": 10188,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10154,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:49"
+      },
+      {
+        "absolutePath": "project:/contracts/ERC3664/extensions/IERC3664Metadata.sol",
+        "file": "./IERC3664Metadata.sol",
+        "id": 10155,
+        "nodeType": "ImportDirective",
+        "scope": 10188,
+        "sourceUnit": 10103,
+        "src": "62:32:49",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 10157,
+              "name": "IERC3664Metadata",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 10102,
+              "src": "204:16:49"
+            },
+            "id": 10158,
+            "nodeType": "InheritanceSpecifier",
+            "src": "204:16:49"
+          }
+        ],
+        "contractDependencies": [
+          5144,
+          7904,
+          10102
+        ],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 10156,
+          "nodeType": "StructuredDocumentation",
+          "src": "98:73:49",
+          "text": " @dev Interface for the updatable functions from the ERC3664."
+        },
+        "fullyImplemented": false,
+        "id": 10187,
+        "linearizedBaseContracts": [
+          10187,
+          10102,
+          7904,
+          5144
+        ],
+        "name": "IERC3664Updatable",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 10159,
+              "nodeType": "StructuredDocumentation",
+              "src": "228:72:49",
+              "text": " @dev Remove attribute type `attrId` from `tokenId`."
+            },
+            "functionSelector": "6526db7a",
+            "id": 10166,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "remove",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10164,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10161,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10166,
+                  "src": "322:15:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10160,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "322:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10163,
+                  "mutability": "mutable",
+                  "name": "attrId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10166,
+                  "src": "339:14:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10162,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "339:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "321:33:49"
+            },
+            "returnParameters": {
+              "id": 10165,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "363:0:49"
+            },
+            "scope": 10187,
+            "src": "306:58:49",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 10167,
+              "nodeType": "StructuredDocumentation",
+              "src": "372:91:49",
+              "text": " @dev Increases `amount` value of attribute type `attrId` to `tokenId`."
+            },
+            "functionSelector": "756cb823",
+            "id": 10176,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "increase",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10174,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10169,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10176,
+                  "src": "497:15:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10168,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "497:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10171,
+                  "mutability": "mutable",
+                  "name": "attrId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10176,
+                  "src": "523:14:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10170,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "523:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10173,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10176,
+                  "src": "548:14:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10172,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "548:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "486:83:49"
+            },
+            "returnParameters": {
+              "id": 10175,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "578:0:49"
+            },
+            "scope": 10187,
+            "src": "469:110:49",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 10177,
+              "nodeType": "StructuredDocumentation",
+              "src": "587:93:49",
+              "text": " @dev Decreases `amount` value of attribute type `attrId` from `tokenId`."
+            },
+            "functionSelector": "f8fb14fa",
+            "id": 10186,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "decrease",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10184,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10179,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10186,
+                  "src": "714:15:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10178,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "714:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10181,
+                  "mutability": "mutable",
+                  "name": "attrId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10186,
+                  "src": "740:14:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10180,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "740:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10183,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10186,
+                  "src": "765:14:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10182,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "765:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "703:83:49"
+            },
+            "returnParameters": {
+              "id": 10185,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "795:0:49"
+            },
+            "scope": 10187,
+            "src": "686:110:49",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10188,
+        "src": "173:626:49"
+      }
+    ],
+    "src": "35:766:49"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/ERC3664/extensions/IERC3664Updatable.sol",
+    "exportedSymbols": {
+      "IERC165": [
+        5144
+      ],
+      "IERC3664": [
+        7904
+      ],
+      "IERC3664Metadata": [
+        10102
+      ],
+      "IERC3664Updatable": [
+        10187
+      ]
+    },
+    "id": 10188,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10154,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:49"
+      },
+      {
+        "absolutePath": "project:/contracts/ERC3664/extensions/IERC3664Metadata.sol",
+        "file": "./IERC3664Metadata.sol",
+        "id": 10155,
+        "nodeType": "ImportDirective",
+        "scope": 10188,
+        "sourceUnit": 10103,
+        "src": "62:32:49",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 10157,
+              "name": "IERC3664Metadata",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 10102,
+              "src": "204:16:49"
+            },
+            "id": 10158,
+            "nodeType": "InheritanceSpecifier",
+            "src": "204:16:49"
+          }
+        ],
+        "contractDependencies": [
+          5144,
+          7904,
+          10102
+        ],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 10156,
+          "nodeType": "StructuredDocumentation",
+          "src": "98:73:49",
+          "text": " @dev Interface for the updatable functions from the ERC3664."
+        },
+        "fullyImplemented": false,
+        "id": 10187,
+        "linearizedBaseContracts": [
+          10187,
+          10102,
+          7904,
+          5144
+        ],
+        "name": "IERC3664Updatable",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 10159,
+              "nodeType": "StructuredDocumentation",
+              "src": "228:72:49",
+              "text": " @dev Remove attribute type `attrId` from `tokenId`."
+            },
+            "functionSelector": "6526db7a",
+            "id": 10166,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "remove",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10164,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10161,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10166,
+                  "src": "322:15:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10160,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "322:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10163,
+                  "mutability": "mutable",
+                  "name": "attrId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10166,
+                  "src": "339:14:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10162,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "339:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "321:33:49"
+            },
+            "returnParameters": {
+              "id": 10165,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "363:0:49"
+            },
+            "scope": 10187,
+            "src": "306:58:49",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 10167,
+              "nodeType": "StructuredDocumentation",
+              "src": "372:91:49",
+              "text": " @dev Increases `amount` value of attribute type `attrId` to `tokenId`."
+            },
+            "functionSelector": "756cb823",
+            "id": 10176,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "increase",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10174,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10169,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10176,
+                  "src": "497:15:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10168,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "497:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10171,
+                  "mutability": "mutable",
+                  "name": "attrId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10176,
+                  "src": "523:14:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10170,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "523:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10173,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10176,
+                  "src": "548:14:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10172,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "548:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "486:83:49"
+            },
+            "returnParameters": {
+              "id": 10175,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "578:0:49"
+            },
+            "scope": 10187,
+            "src": "469:110:49",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 10177,
+              "nodeType": "StructuredDocumentation",
+              "src": "587:93:49",
+              "text": " @dev Decreases `amount` value of attribute type `attrId` from `tokenId`."
+            },
+            "functionSelector": "f8fb14fa",
+            "id": 10186,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "decrease",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10184,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10179,
+                  "mutability": "mutable",
+                  "name": "tokenId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10186,
+                  "src": "714:15:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10178,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "714:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10181,
+                  "mutability": "mutable",
+                  "name": "attrId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10186,
+                  "src": "740:14:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10180,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "740:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10183,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10186,
+                  "src": "765:14:49",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10182,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "765:7:49",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "703:83:49"
+            },
+            "returnParameters": {
+              "id": 10185,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "795:0:49"
+            },
+            "scope": 10187,
+            "src": "686:110:49",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10188,
+        "src": "173:626:49"
+      }
+    ],
+    "src": "35:766:49"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-09-22T09:26:13.496Z",
+  "devdoc": {
+    "details": "Interface for the updatable functions from the ERC3664.",
+    "kind": "dev",
+    "methods": {
+      "attach(uint256,uint256,uint256,bytes,bool)": {
+        "details": "Attaches `amount` value of attribute type `attrId` to `tokenId`."
+      },
+      "attrURI(uint256)": {
+        "details": "Returns the Uniform Resource Identifier (URI) for `attrId` attribute."
+      },
+      "attributesOf(uint256)": {
+        "details": "Returns all attribute types of owned by `tokenId`."
+      },
+      "balanceOf(uint256,uint256)": {
+        "details": "Returns the attribute type `attrId` value owned by `tokenId`."
+      },
+      "balanceOfBatch(uint256,uint256[])": {
+        "details": "Returns the batch of attribute type `attrIds` values owned by `tokenId`."
+      },
+      "batchAttach(uint256,uint256[],uint256[],bytes[])": {
+        "details": "[Batched] version of {attach}."
+      },
+      "decrease(uint256,uint256,uint256)": {
+        "details": "Decreases `amount` value of attribute type `attrId` from `tokenId`."
+      },
+      "increase(uint256,uint256,uint256)": {
+        "details": "Increases `amount` value of attribute type `attrId` to `tokenId`."
+      },
+      "name(uint256)": {
+        "details": "Returns the name of the attribute."
+      },
+      "primaryAttributeOf(uint256)": {
+        "details": "Returns primary attribute type of owned by `tokenId`."
+      },
+      "remove(uint256,uint256)": {
+        "details": "Remove attribute type `attrId` from `tokenId`."
+      },
+      "supportsInterface(bytes4)": {
+        "details": "Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section] to learn more about how these ids are created. This function call must use less than 30 000 gas."
+      },
+      "symbol(uint256)": {
+        "details": "Returns the symbol of the attribute."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

@@ -1,0 +1,1141 @@
+{
+  "contractName": "IERC3664Metadata",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "symbol",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "uri",
+          "type": "string"
+        }
+      ],
+      "name": "NewAttribute",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256[]",
+          "name": "attrIds",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "string[]",
+          "name": "names",
+          "type": "string[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "string[]",
+          "name": "symbols",
+          "type": "string[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "string[]",
+          "name": "uris",
+          "type": "string[]"
+        }
+      ],
+      "name": "NewAttributeBatch",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "from",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "to",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256[]",
+          "name": "attrIds",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256[]",
+          "name": "values",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "TransferBatch",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "from",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "to",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "value",
+          "type": "uint256"
+        }
+      ],
+      "name": "TransferSingle",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "text",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bool",
+          "name": "isPrimary",
+          "type": "bool"
+        }
+      ],
+      "name": "attach",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "attributesOf",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "attrIds",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "balanceOfBatch",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "attrIds",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "amounts",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "bytes[]",
+          "name": "texts",
+          "type": "bytes[]"
+        }
+      ],
+      "name": "batchAttach",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "primaryAttributeOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes4",
+          "name": "interfaceId",
+          "type": "bytes4"
+        }
+      ],
+      "name": "supportsInterface",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        }
+      ],
+      "name": "textOf",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        }
+      ],
+      "name": "name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        }
+      ],
+      "name": "symbol",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "attrId",
+          "type": "uint256"
+        }
+      ],
+      "name": "attrURI",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"symbol\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"uri\",\"type\":\"string\"}],\"name\":\"NewAttribute\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256[]\",\"name\":\"attrIds\",\"type\":\"uint256[]\"},{\"indexed\":false,\"internalType\":\"string[]\",\"name\":\"names\",\"type\":\"string[]\"},{\"indexed\":false,\"internalType\":\"string[]\",\"name\":\"symbols\",\"type\":\"string[]\"},{\"indexed\":false,\"internalType\":\"string[]\",\"name\":\"uris\",\"type\":\"string[]\"}],\"name\":\"NewAttributeBatch\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"from\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"to\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256[]\",\"name\":\"attrIds\",\"type\":\"uint256[]\"},{\"indexed\":false,\"internalType\":\"uint256[]\",\"name\":\"values\",\"type\":\"uint256[]\"}],\"name\":\"TransferBatch\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"from\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"to\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"text\",\"type\":\"bytes\"},{\"internalType\":\"bool\",\"name\":\"isPrimary\",\"type\":\"bool\"}],\"name\":\"attach\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"}],\"name\":\"attrURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"attributesOf\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256[]\",\"name\":\"attrIds\",\"type\":\"uint256[]\"}],\"name\":\"balanceOfBatch\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256[]\",\"name\":\"attrIds\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"amounts\",\"type\":\"uint256[]\"},{\"internalType\":\"bytes[]\",\"name\":\"texts\",\"type\":\"bytes[]\"}],\"name\":\"batchAttach\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"}],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"primaryAttributeOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"}],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"attrId\",\"type\":\"uint256\"}],\"name\":\"textOf\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Interface for the optional metadata functions from the ERC3664 standard.\",\"kind\":\"dev\",\"methods\":{\"attach(uint256,uint256,uint256,bytes,bool)\":{\"details\":\"Attaches `amount` value of attribute type `attrId` to `tokenId`.\"},\"attrURI(uint256)\":{\"details\":\"Returns the Uniform Resource Identifier (URI) for `attrId` attribute.\"},\"attributesOf(uint256)\":{\"details\":\"Returns all attribute types of owned by `tokenId`.\"},\"balanceOf(uint256,uint256)\":{\"details\":\"Returns the attribute type `attrId` value owned by `tokenId`.\"},\"balanceOfBatch(uint256,uint256[])\":{\"details\":\"Returns the batch of attribute type `attrIds` values owned by `tokenId`.\"},\"batchAttach(uint256,uint256[],uint256[],bytes[])\":{\"details\":\"[Batched] version of {attach}.\"},\"name(uint256)\":{\"details\":\"Returns the name of the attribute.\"},\"primaryAttributeOf(uint256)\":{\"details\":\"Returns primary attribute type of owned by `tokenId`.\"},\"supportsInterface(bytes4)\":{\"details\":\"Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section] to learn more about how these ids are created. This function call must use less than 30 000 gas.\"},\"symbol(uint256)\":{\"details\":\"Returns the symbol of the attribute.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/ERC3664/extensions/IERC3664Metadata.sol\":\"IERC3664Metadata\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"openzeppelin-solidity/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0xa28007762d9da9db878dd421960c8cb9a10471f47ab5c1b3309bfe48e9e79ff4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://796ab6e88af7bf0e78def0f059310c903af6a312b565344e0ff524a0f26e81c6\",\"dweb:/ipfs/QmcsVgLgzWdor3UnAztUkXKNGcysm1MPneWksF72AvnwBx\"]},\"project:/contracts/ERC3664/IERC3664.sol\":{\"keccak256\":\"0xe45bfea37732f89faf005a7b4fa740df2acadf238eb4896d6c09d08837dff757\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c79ecfeb7d7d9b5d4f33613517f87a8ad7040d11f46d760cb0ac61560c0da8ac\",\"dweb:/ipfs/QmeRkXq4SyspbbfVCL3kXow3cT1gecXMecSPVeMf8oicTb\"]},\"project:/contracts/ERC3664/extensions/IERC3664Metadata.sol\":{\"keccak256\":\"0xd3b18da2189879434dae22bd3e8f25633a030eff5ceb1935cc55969f2eebb879\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://678436af52d75a1bf7980ab480d6cf946413626e7c81581334a1f907d39ce966\",\"dweb:/ipfs/QmPCKfFym4FybptF5cuKwtf4LcfFivszMUkc5de6yzyQva\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.0;\r\n\r\nimport \"../IERC3664.sol\";\r\n\r\n/**\r\n * @dev Interface for the optional metadata functions from the ERC3664 standard.\r\n */\r\ninterface IERC3664Metadata is IERC3664 {\r\n    /**\r\n     * @dev Returns the name of the attribute.\r\n     */\r\n    function name(uint256 attrId) external view returns (string memory);\r\n\r\n    /**\r\n     * @dev Returns the symbol of the attribute.\r\n     */\r\n    function symbol(uint256 attrId) external view returns (string memory);\r\n\r\n    /**\r\n     * @dev Returns the Uniform Resource Identifier (URI) for `attrId` attribute.\r\n     */\r\n    function attrURI(uint256 attrId) external view returns (string memory);\r\n}\r\n",
+  "sourcePath": "D:\\MetaNFT\\MetaNFT\\contracts\\ERC3664\\extensions\\IERC3664Metadata.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/ERC3664/extensions/IERC3664Metadata.sol",
+    "exportedSymbols": {
+      "IERC165": [
+        5144
+      ],
+      "IERC3664": [
+        7904
+      ],
+      "IERC3664Metadata": [
+        10102
+      ]
+    },
+    "id": 10103,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10073,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:47"
+      },
+      {
+        "absolutePath": "project:/contracts/ERC3664/IERC3664.sol",
+        "file": "../IERC3664.sol",
+        "id": 10074,
+        "nodeType": "ImportDirective",
+        "scope": 10103,
+        "sourceUnit": 7905,
+        "src": "62:25:47",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 10076,
+              "name": "IERC3664",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 7904,
+              "src": "213:8:47"
+            },
+            "id": 10077,
+            "nodeType": "InheritanceSpecifier",
+            "src": "213:8:47"
+          }
+        ],
+        "contractDependencies": [
+          5144,
+          7904
+        ],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 10075,
+          "nodeType": "StructuredDocumentation",
+          "src": "91:90:47",
+          "text": " @dev Interface for the optional metadata functions from the ERC3664 standard."
+        },
+        "fullyImplemented": false,
+        "id": 10102,
+        "linearizedBaseContracts": [
+          10102,
+          7904,
+          5144
+        ],
+        "name": "IERC3664Metadata",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 10078,
+              "nodeType": "StructuredDocumentation",
+              "src": "229:60:47",
+              "text": " @dev Returns the name of the attribute."
+            },
+            "functionSelector": "00ad800c",
+            "id": 10085,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "name",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10081,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10080,
+                  "mutability": "mutable",
+                  "name": "attrId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10085,
+                  "src": "309:14:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10079,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "309:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "308:16:47"
+            },
+            "returnParameters": {
+              "id": 10084,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10083,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10085,
+                  "src": "348:13:47",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10082,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "348:6:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "347:15:47"
+            },
+            "scope": 10102,
+            "src": "295:68:47",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 10086,
+              "nodeType": "StructuredDocumentation",
+              "src": "371:62:47",
+              "text": " @dev Returns the symbol of the attribute."
+            },
+            "functionSelector": "4e41a1fb",
+            "id": 10093,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "symbol",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10089,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10088,
+                  "mutability": "mutable",
+                  "name": "attrId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10093,
+                  "src": "455:14:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10087,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "455:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "454:16:47"
+            },
+            "returnParameters": {
+              "id": 10092,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10091,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10093,
+                  "src": "494:13:47",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10090,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "494:6:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "493:15:47"
+            },
+            "scope": 10102,
+            "src": "439:70:47",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 10094,
+              "nodeType": "StructuredDocumentation",
+              "src": "517:95:47",
+              "text": " @dev Returns the Uniform Resource Identifier (URI) for `attrId` attribute."
+            },
+            "functionSelector": "9bc5ae54",
+            "id": 10101,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "attrURI",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10097,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10096,
+                  "mutability": "mutable",
+                  "name": "attrId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10101,
+                  "src": "635:14:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10095,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "635:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "634:16:47"
+            },
+            "returnParameters": {
+              "id": 10100,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10099,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10101,
+                  "src": "674:13:47",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10098,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "674:6:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "673:15:47"
+            },
+            "scope": 10102,
+            "src": "618:71:47",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10103,
+        "src": "183:509:47"
+      }
+    ],
+    "src": "35:659:47"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/ERC3664/extensions/IERC3664Metadata.sol",
+    "exportedSymbols": {
+      "IERC165": [
+        5144
+      ],
+      "IERC3664": [
+        7904
+      ],
+      "IERC3664Metadata": [
+        10102
+      ]
+    },
+    "id": 10103,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10073,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:47"
+      },
+      {
+        "absolutePath": "project:/contracts/ERC3664/IERC3664.sol",
+        "file": "../IERC3664.sol",
+        "id": 10074,
+        "nodeType": "ImportDirective",
+        "scope": 10103,
+        "sourceUnit": 7905,
+        "src": "62:25:47",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 10076,
+              "name": "IERC3664",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 7904,
+              "src": "213:8:47"
+            },
+            "id": 10077,
+            "nodeType": "InheritanceSpecifier",
+            "src": "213:8:47"
+          }
+        ],
+        "contractDependencies": [
+          5144,
+          7904
+        ],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 10075,
+          "nodeType": "StructuredDocumentation",
+          "src": "91:90:47",
+          "text": " @dev Interface for the optional metadata functions from the ERC3664 standard."
+        },
+        "fullyImplemented": false,
+        "id": 10102,
+        "linearizedBaseContracts": [
+          10102,
+          7904,
+          5144
+        ],
+        "name": "IERC3664Metadata",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 10078,
+              "nodeType": "StructuredDocumentation",
+              "src": "229:60:47",
+              "text": " @dev Returns the name of the attribute."
+            },
+            "functionSelector": "00ad800c",
+            "id": 10085,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "name",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10081,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10080,
+                  "mutability": "mutable",
+                  "name": "attrId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10085,
+                  "src": "309:14:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10079,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "309:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "308:16:47"
+            },
+            "returnParameters": {
+              "id": 10084,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10083,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10085,
+                  "src": "348:13:47",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10082,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "348:6:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "347:15:47"
+            },
+            "scope": 10102,
+            "src": "295:68:47",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 10086,
+              "nodeType": "StructuredDocumentation",
+              "src": "371:62:47",
+              "text": " @dev Returns the symbol of the attribute."
+            },
+            "functionSelector": "4e41a1fb",
+            "id": 10093,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "symbol",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10089,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10088,
+                  "mutability": "mutable",
+                  "name": "attrId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10093,
+                  "src": "455:14:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10087,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "455:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "454:16:47"
+            },
+            "returnParameters": {
+              "id": 10092,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10091,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10093,
+                  "src": "494:13:47",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10090,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "494:6:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "493:15:47"
+            },
+            "scope": 10102,
+            "src": "439:70:47",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 10094,
+              "nodeType": "StructuredDocumentation",
+              "src": "517:95:47",
+              "text": " @dev Returns the Uniform Resource Identifier (URI) for `attrId` attribute."
+            },
+            "functionSelector": "9bc5ae54",
+            "id": 10101,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "attrURI",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10097,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10096,
+                  "mutability": "mutable",
+                  "name": "attrId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10101,
+                  "src": "635:14:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10095,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "635:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "634:16:47"
+            },
+            "returnParameters": {
+              "id": 10100,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10099,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10101,
+                  "src": "674:13:47",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 10098,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "674:6:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "673:15:47"
+            },
+            "scope": 10102,
+            "src": "618:71:47",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10103,
+        "src": "183:509:47"
+      }
+    ],
+    "src": "35:659:47"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-09-22T09:26:13.494Z",
+  "devdoc": {
+    "details": "Interface for the optional metadata functions from the ERC3664 standard.",
+    "kind": "dev",
+    "methods": {
+      "attach(uint256,uint256,uint256,bytes,bool)": {
+        "details": "Attaches `amount` value of attribute type `attrId` to `tokenId`."
+      },
+      "attrURI(uint256)": {
+        "details": "Returns the Uniform Resource Identifier (URI) for `attrId` attribute."
+      },
+      "attributesOf(uint256)": {
+        "details": "Returns all attribute types of owned by `tokenId`."
+      },
+      "balanceOf(uint256,uint256)": {
+        "details": "Returns the attribute type `attrId` value owned by `tokenId`."
+      },
+      "balanceOfBatch(uint256,uint256[])": {
+        "details": "Returns the batch of attribute type `attrIds` values owned by `tokenId`."
+      },
+      "batchAttach(uint256,uint256[],uint256[],bytes[])": {
+        "details": "[Batched] version of {attach}."
+      },
+      "name(uint256)": {
+        "details": "Returns the name of the attribute."
+      },
+      "primaryAttributeOf(uint256)": {
+        "details": "Returns primary attribute type of owned by `tokenId`."
+      },
+      "supportsInterface(bytes4)": {
+        "details": "Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section] to learn more about how these ids are created. This function call must use less than 30 000 gas."
+      },
+      "symbol(uint256)": {
+        "details": "Returns the symbol of the attribute."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

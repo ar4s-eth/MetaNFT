@@ -1,0 +1,313 @@
+{
+  "contractName": "ITokenHolder",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "holderOf",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"holderOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"holderOf(uint256)\":{\"details\":\"Returns the holder of token type `id`.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/utils/ITokenHolder.sol\":\"ITokenHolder\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/utils/ITokenHolder.sol\":{\"keccak256\":\"0x523323aa359c2dc74612e0b59b808901e9e54ae951dec4d9d2343b65eb50dc61\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3bc45d25a88ca57a64e8449108a6a4fc6e4657d63065c2c1104f3c57e6eaf8c4\",\"dweb:/ipfs/QmYwTPrX11jfLTTcm2LdXmASbmczR97sANy4tHcrFTvbKL\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.0;\r\n\r\ninterface ITokenHolder {\r\n    /**\r\n     * @dev Returns the holder of token type `id`.\r\n     */\r\n    function holderOf(uint256 id) external view returns (address);\r\n}\r\n",
+  "sourcePath": "D:\\MetaNFT\\MetaNFT\\contracts\\utils\\ITokenHolder.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/utils/ITokenHolder.sol",
+    "exportedSymbols": {
+      "ITokenHolder": [
+        18853
+      ]
+    },
+    "id": 18854,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 18844,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:65"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 18853,
+        "linearizedBaseContracts": [
+          18853
+        ],
+        "name": "ITokenHolder",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 18845,
+              "nodeType": "StructuredDocumentation",
+              "src": "92:64:65",
+              "text": " @dev Returns the holder of token type `id`."
+            },
+            "functionSelector": "dbacc237",
+            "id": 18852,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "holderOf",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 18848,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18847,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18852,
+                  "src": "180:10:65",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 18846,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "180:7:65",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "179:12:65"
+            },
+            "returnParameters": {
+              "id": 18851,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18850,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18852,
+                  "src": "215:7:65",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 18849,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "215:7:65",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "214:9:65"
+            },
+            "scope": 18853,
+            "src": "162:62:65",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 18854,
+        "src": "62:165:65"
+      }
+    ],
+    "src": "35:194:65"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/utils/ITokenHolder.sol",
+    "exportedSymbols": {
+      "ITokenHolder": [
+        18853
+      ]
+    },
+    "id": 18854,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 18844,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:65"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 18853,
+        "linearizedBaseContracts": [
+          18853
+        ],
+        "name": "ITokenHolder",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 18845,
+              "nodeType": "StructuredDocumentation",
+              "src": "92:64:65",
+              "text": " @dev Returns the holder of token type `id`."
+            },
+            "functionSelector": "dbacc237",
+            "id": 18852,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "holderOf",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 18848,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18847,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18852,
+                  "src": "180:10:65",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 18846,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "180:7:65",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "179:12:65"
+            },
+            "returnParameters": {
+              "id": 18851,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18850,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18852,
+                  "src": "215:7:65",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 18849,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "215:7:65",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "214:9:65"
+            },
+            "scope": 18853,
+            "src": "162:62:65",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 18854,
+        "src": "62:165:65"
+      }
+    ],
+    "src": "35:194:65"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-09-22T09:26:18.017Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "holderOf(uint256)": {
+        "details": "Returns the holder of token type `id`."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

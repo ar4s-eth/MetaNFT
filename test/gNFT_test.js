@@ -1,3 +1,5 @@
+const { assert } = require('chai')
+
 const Color = artifacts.require('./gNFT.sol')
 
 require('chai')
@@ -12,7 +14,6 @@ contract('gNFT', (accounts) => {
     })
 
     describe('construtor', async() => {
-
         it('deploys successfully', async () => {
             const address = contract.address
             assert.notEqual(address, 0x0)
@@ -20,31 +21,46 @@ contract('gNFT', (accounts) => {
             assert.notEqual(address, null)
             assert.notEqual(address, undefined)
         })
+
+        it('has a house', async () =>{
+            const name = await contract.name();
+            const symbol = await contract.symbol();
+            assert.equal(name, "House");
+            assert.equal(symbol, 'BUILDING');
+        })
         
-        it('has a name', async () =>{
-            const name = await contract.name()
-            assert.equal(name, "Fox");
+        it('has a attr of house', async () =>{
+            const name = await contract.name(1);
+            const symbol = await contract.symbol(1);
+            assert.equal(name, "HOUSE");
+            assert.equal(symbol, 'house');
         })
 
-        it('has a symbol', async () => {
-            const symbol = await contract.symbol()
-            assert.equal(symbol, 'Role');
+        it('has a attr of base', async () => {
+            const name = await contract.name(2);
+            const symbol = await contract.symbol(2);
+            assert.equal(name, "BASE");
+            assert.equal(symbol, 'base');
+        })
+    })
+
+    describe('mint', async() => {
+        it('getSubToken', async () => {
+            //claim token of 818 building
+            await contract.claim(818); 
+            const result = await contract.getSubTokens(818);
+            assert.equal(result[0], 101);
+            assert.equal(result[1], 102);
+            assert.equal(result[2], 103);
         })
 
-        it('add a attr with level', async () => {
-            await contract.addAttr(0, 'Level', 'LEVEL', 0);
-            const level = await contract.attrsName(0);
-            assert.equal(level, 'Level');
-        })
+        it('get attr name', async () => {
 
-        it('add a attr with gender', async () => {
-            await contract.addAttr(1, 'Gender', 'GENDER', 1);
-            const gender = await contract.attrsName(1);
-            assert.notEqual(gender, 'jjksjelj');
-        })
-
-        it('No exist in attrs', async () => {
-            await contract.attrsName(2).should.be.rejected;
+            //await contract.claim(818); 
+            const result = await contract.getSubTokens(818);
+            const house = await contract.name(818);
+            assert.equal(result[0], 101);
+            assert.equal(house, 'HOUSE');
         })
     })
 })

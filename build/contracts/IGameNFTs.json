@@ -1,0 +1,310 @@
+{
+  "contractName": "IGameNFTs",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_id",
+          "type": "uint256"
+        }
+      ],
+      "name": "creatorOf",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_id\",\"type\":\"uint256\"}],\"name\":\"creatorOf\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Interface of the NFT attribute.\",\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IGameNFTs.sol\":\"IGameNFTs\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IGameNFTs.sol\":{\"keccak256\":\"0x940da42163ce9ebf2aaf3fcebda1e80ead6c9c45339caa54572e7946545d678d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e68cbc852b26c89790fa350607ca5b252b0219f3d6d3df5c83ac27486bc519d5\",\"dweb:/ipfs/QmXX4yAxEKKaZMBjeTxfvR25WC6nVaDEqVP2jZ3HonyG5a\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.0;\r\n\r\n/**\r\n * @dev Interface of the NFT attribute.\r\n */\r\ninterface IGameNFTs {\r\n    function creatorOf(uint256 _id) external view returns (address);\r\n}\r\n",
+  "sourcePath": "D:\\MetaNFT\\MetaNFT\\contracts\\IGameNFTs.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/IGameNFTs.sol",
+    "exportedSymbols": {
+      "IGameNFTs": [
+        10198
+      ]
+    },
+    "id": 10199,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10189,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:50"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 10190,
+          "nodeType": "StructuredDocumentation",
+          "src": "62:49:50",
+          "text": " @dev Interface of the NFT attribute."
+        },
+        "fullyImplemented": false,
+        "id": 10198,
+        "linearizedBaseContracts": [
+          10198
+        ],
+        "name": "IGameNFTs",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "589a1743",
+            "id": 10197,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "creatorOf",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10193,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10192,
+                  "mutability": "mutable",
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10197,
+                  "src": "159:11:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10191,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "159:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "158:13:50"
+            },
+            "returnParameters": {
+              "id": 10196,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10195,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10197,
+                  "src": "195:7:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10194,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "195:7:50",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "194:9:50"
+            },
+            "scope": 10198,
+            "src": "140:64:50",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10199,
+        "src": "113:94:50"
+      }
+    ],
+    "src": "35:174:50"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/IGameNFTs.sol",
+    "exportedSymbols": {
+      "IGameNFTs": [
+        10198
+      ]
+    },
+    "id": 10199,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10189,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:50"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 10190,
+          "nodeType": "StructuredDocumentation",
+          "src": "62:49:50",
+          "text": " @dev Interface of the NFT attribute."
+        },
+        "fullyImplemented": false,
+        "id": 10198,
+        "linearizedBaseContracts": [
+          10198
+        ],
+        "name": "IGameNFTs",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "589a1743",
+            "id": 10197,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "creatorOf",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10193,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10192,
+                  "mutability": "mutable",
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10197,
+                  "src": "159:11:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10191,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "159:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "158:13:50"
+            },
+            "returnParameters": {
+              "id": 10196,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10195,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10197,
+                  "src": "195:7:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10194,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "195:7:50",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "194:9:50"
+            },
+            "scope": 10198,
+            "src": "140:64:50",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10199,
+        "src": "113:94:50"
+      }
+    ],
+    "src": "35:174:50"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-09-22T09:26:13.497Z",
+  "devdoc": {
+    "details": "Interface of the NFT attribute.",
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

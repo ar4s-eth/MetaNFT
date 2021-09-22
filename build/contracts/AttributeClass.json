@@ -1,0 +1,557 @@
+{
+  "contractName": "AttributeClass",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "class",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"class\",\"outputs\":[{\"internalType\":\"uint16\",\"name\":\"\",\"type\":\"uint16\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"class()\":{\"details\":\"Returns the class of the attribute.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/utils/AttributeClass.sol\":\"AttributeClass\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/utils/AttributeClass.sol\":{\"keccak256\":\"0x2056818666fce6048ef52f683f9f6771b8b7805471c71723a1a16cc43a4b8df4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://688cb2193410387aad0016743dbed0bfe596fa08d3c14fd5a385a5d124eb3da8\",\"dweb:/ipfs/QmdPjTEefDzwq7tT5T8CnxyfpHdZhivydWUu8R2YurKbos\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\n\r\npragma solidity ^0.8.0;\r\n\r\nabstract contract AttributeClass {\r\n    // 1 => Generic,\r\n    // 2 => Upgradable,\r\n    // 3 => Transferable,\r\n    // 4 => Evolvable\r\n    // more expand...\r\n    uint16 private _class;\r\n\r\n    constructor(uint16 class_) {\r\n        _class = class_;\r\n    }\r\n\r\n    /**\r\n     * @dev Returns the class of the attribute.\r\n     */\r\n    function class() public view virtual returns (uint16) {\r\n        return _class;\r\n    }\r\n}\r\n",
+  "sourcePath": "D:\\MetaNFT\\MetaNFT\\contracts\\utils\\AttributeClass.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/utils/AttributeClass.sol",
+    "exportedSymbols": {
+      "AttributeClass": [
+        18784
+      ]
+    },
+    "id": 18785,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 18762,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:63"
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 18784,
+        "linearizedBaseContracts": [
+          18784
+        ],
+        "name": "AttributeClass",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 18764,
+            "mutability": "mutable",
+            "name": "_class",
+            "nodeType": "VariableDeclaration",
+            "scope": 18784,
+            "src": "222:21:63",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint16",
+              "typeString": "uint16"
+            },
+            "typeName": {
+              "id": 18763,
+              "name": "uint16",
+              "nodeType": "ElementaryTypeName",
+              "src": "222:6:63",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint16",
+                "typeString": "uint16"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 18773,
+              "nodeType": "Block",
+              "src": "279:34:63",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 18771,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 18769,
+                      "name": "_class",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 18764,
+                      "src": "290:6:63",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint16",
+                        "typeString": "uint16"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 18770,
+                      "name": "class_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 18766,
+                      "src": "299:6:63",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint16",
+                        "typeString": "uint16"
+                      }
+                    },
+                    "src": "290:15:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "id": 18772,
+                  "nodeType": "ExpressionStatement",
+                  "src": "290:15:63"
+                }
+              ]
+            },
+            "id": 18774,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 18767,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18766,
+                  "mutability": "mutable",
+                  "name": "class_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18774,
+                  "src": "264:13:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 18765,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "264:6:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "263:15:63"
+            },
+            "returnParameters": {
+              "id": 18768,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "279:0:63"
+            },
+            "scope": 18784,
+            "src": "252:61:63",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 18782,
+              "nodeType": "Block",
+              "src": "442:32:63",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 18780,
+                    "name": "_class",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 18764,
+                    "src": "460:6:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "functionReturnParameters": 18779,
+                  "id": 18781,
+                  "nodeType": "Return",
+                  "src": "453:13:63"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 18775,
+              "nodeType": "StructuredDocumentation",
+              "src": "321:61:63",
+              "text": " @dev Returns the class of the attribute."
+            },
+            "functionSelector": "bff852fa",
+            "id": 18783,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "class",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 18776,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "402:2:63"
+            },
+            "returnParameters": {
+              "id": 18779,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18778,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18783,
+                  "src": "434:6:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 18777,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "434:6:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "433:8:63"
+            },
+            "scope": 18784,
+            "src": "388:86:63",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "public"
+          }
+        ],
+        "scope": 18785,
+        "src": "62:415:63"
+      }
+    ],
+    "src": "35:444:63"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/utils/AttributeClass.sol",
+    "exportedSymbols": {
+      "AttributeClass": [
+        18784
+      ]
+    },
+    "id": 18785,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 18762,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:23:63"
+      },
+      {
+        "abstract": true,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 18784,
+        "linearizedBaseContracts": [
+          18784
+        ],
+        "name": "AttributeClass",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 18764,
+            "mutability": "mutable",
+            "name": "_class",
+            "nodeType": "VariableDeclaration",
+            "scope": 18784,
+            "src": "222:21:63",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint16",
+              "typeString": "uint16"
+            },
+            "typeName": {
+              "id": 18763,
+              "name": "uint16",
+              "nodeType": "ElementaryTypeName",
+              "src": "222:6:63",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint16",
+                "typeString": "uint16"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 18773,
+              "nodeType": "Block",
+              "src": "279:34:63",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 18771,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 18769,
+                      "name": "_class",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 18764,
+                      "src": "290:6:63",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint16",
+                        "typeString": "uint16"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 18770,
+                      "name": "class_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 18766,
+                      "src": "299:6:63",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint16",
+                        "typeString": "uint16"
+                      }
+                    },
+                    "src": "290:15:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "id": 18772,
+                  "nodeType": "ExpressionStatement",
+                  "src": "290:15:63"
+                }
+              ]
+            },
+            "id": 18774,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 18767,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18766,
+                  "mutability": "mutable",
+                  "name": "class_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18774,
+                  "src": "264:13:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 18765,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "264:6:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "263:15:63"
+            },
+            "returnParameters": {
+              "id": 18768,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "279:0:63"
+            },
+            "scope": 18784,
+            "src": "252:61:63",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 18782,
+              "nodeType": "Block",
+              "src": "442:32:63",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 18780,
+                    "name": "_class",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 18764,
+                    "src": "460:6:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "functionReturnParameters": 18779,
+                  "id": 18781,
+                  "nodeType": "Return",
+                  "src": "453:13:63"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 18775,
+              "nodeType": "StructuredDocumentation",
+              "src": "321:61:63",
+              "text": " @dev Returns the class of the attribute."
+            },
+            "functionSelector": "bff852fa",
+            "id": 18783,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "class",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 18776,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "402:2:63"
+            },
+            "returnParameters": {
+              "id": 18779,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18778,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18783,
+                  "src": "434:6:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 18777,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "434:6:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "433:8:63"
+            },
+            "scope": 18784,
+            "src": "388:86:63",
+            "stateMutability": "view",
+            "virtual": true,
+            "visibility": "public"
+          }
+        ],
+        "scope": 18785,
+        "src": "62:415:63"
+      }
+    ],
+    "src": "35:444:63"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2021-09-22T09:26:18.016Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "class()": {
+        "details": "Returns the class of the attribute."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
